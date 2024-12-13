@@ -1,9 +1,3 @@
-"""
-@file main.py
-@brief Point d'entrée du bot Discord.
-@details Ici, on configure et démarre le bot avec tout ce qu'il faut pour qu'il roule sans accroc (en théorie).
-"""
-
 import asyncio
 import logging
 from discord.ext import commands
@@ -11,25 +5,35 @@ from discord import Intents
 from config import BOT_TOKEN
 
 """
-@brief Configure les logs pour voir ce que le bot fait.
-@details Ça permet d'afficher les infos importantes, les bugs, ou juste savoir quand il se connecte.
+@file main.py
+@brief Point d'entrée du bot Discord.
+@details Configure et démarre le bot Discord, charge les extensions et synchronise les commandes slash.
+"""
+
+# Configuration de logging pour afficher les informations
+"""
+@brief Configure les logs pour surveiller l'activité du bot.
+@details Affiche les messages d'information, d'erreurs et autres événements importants dans la console.
 """
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
+# Initialisation du bot avec un préfixe de commande et des permissions
 """
 @var bot
-@param command_prefix Définit le préfixe pour les commandes textuelles (ici, "/").
-@param intents Dit au bot ce qu’il a le droit de voir/faire (genre lire les messages, voir les réactions, etc.).
+@brief Instance principale du bot Discord.
+@param command_prefix Le préfixe des commandes textuelles.
+@param intents Les permissions d'intéraction du bot avec Discord.
 """
 bot = commands.Bot(command_prefix="/", intents=Intents.all())
 
+# Liste des extensions à charger
 """
 @var initial_extensions
-La liste des "cogs" (modules) que le bot va charger. 
-Chaque cog, c’est une partie du bot (par ex. commandes pour salles, admin, etc.).
+@brief Liste des modules (cogs) à charger au démarrage.
+@details Chaque module représente une fonctionnalité distincte (ex. gestion des salles, commandes admin).
 """
 initial_extensions = [
     "Cogs.salles.Salles",
@@ -37,9 +41,10 @@ initial_extensions = [
     "Cogs.admin",
 ]
 
+# Fonction pour charger les extensions
 """
-@brief Charge les modules définis dans `initial_extensions`.
-@details Chaque extension est chargée ici et on loggue si ça plante.
+@brief Charge les extensions définies dans `initial_extensions`.
+@details Log chaque extension chargée ou les erreurs rencontrées.
 """
 
 
@@ -52,10 +57,11 @@ async def load_extensions():
             logging.error(f"Erreur lors du chargement de {extension} : {e}")
 
 
+# Événement indiquant que le bot est prêt
 """
 @event on_ready
-@brief C'est appelé quand le bot est connecté et prêt.
-@details Ici, on affiche un message dans la console pour confirmer, et on synchronise les commandes slash.
+@brief Appelé lorsque le bot est connecté et prêt à l'utilisation.
+@details Synchronise les commandes slash et affiche un message dans la console.
 """
 
 
@@ -66,18 +72,17 @@ async def on_ready():
         # Synchronisation globale des commandes slash
         synced = await bot.tree.sync()
         if synced:
-            logging.info(f"Commandes slash synchronisées : {len(synced)} commandes.\n")
+            logging.info(f"Commandes slash synchronisées : {len(synced)} commandes.")
         else:
-            logging.info(
-                "Commandes slash synchronisées (askip), mais aucune commande n'a été retournée :(\n)"
-            )
+            logging.info("Aucune commande synchronisée retournée.")
     except Exception as e:
-        logging.error(f"Erreur lors de la synchronisation des commandes >:(\n{e}\n\n")
+        logging.error(f"Erreur lors de la synchronisation des commandes : {e}")
 
 
+# Fonction principale pour lancer le bot
 """
 @brief Point d'entrée asynchrone du bot.
-@details Charge les cogs, et démarre le bot avec son token.
+@details Charge les extensions et démarre le bot avec son token.
 """
 
 
@@ -87,9 +92,10 @@ async def main():
         await bot.start(BOT_TOKEN)
 
 
+# Démarrage de la boucle principale
 """
-@brief Démarre tout.
-@details Le code ici lance la boucle asynchrone principale avec `asyncio.run`.
+@brief Lance la boucle principale asynchrone du bot.
+@details Initialise tout en utilisant asyncio.
 """
 if __name__ == "__main__":
     asyncio.run(main())

@@ -3,27 +3,25 @@ from discord.ext import commands
 from discord import app_commands
 
 """
-    @brief Cog pour les commandes d'administration.
-    @details Contient des commandes permettant de gérer le serveur, telles que la suppression de messages.
-    """
+@file admin.py
+@brief Cog pour les commandes d'administration.
+@details Contient des commandes permettant de gérer le serveur, telles que la suppression de messages.
+"""
 
 
 class Admin(commands.Cog):
     """
-    @brief Initialise la classe Admin.
-    @param bot Instance du bot Discord.
+    @class Admin
+    @brief Cog pour les commandes d'administration.
+    @details Fournit des outils pour gérer efficacement les salons Discord.
     """
 
     def __init__(self, bot):
-        self.bot = bot
-
-    """
-        @brief Supprime un nombre défini de messages dans le salon actuel.
-        @param interaction Interaction contenant les informations sur la commande slash.
-        @param nombre Nombre de messages à supprimer (entre 1 et 100).
-        @details Cette commande ne peut être utilisée que par les utilisateurs ayant la permission de gérer les messages.
-        @note Le message confirmant la suppression est envoyé de manière éphémère.
         """
+        @brief Initialise le Cog Admin.
+        @param bot Instance du bot Discord.
+        """
+        self.bot = bot
 
     @app_commands.command(
         name="clear",
@@ -31,7 +29,13 @@ class Admin(commands.Cog):
     )
     @app_commands.describe(nombre="Nombre de messages à supprimer (max. 100)")
     async def clear(self, interaction: discord.Interaction, nombre: int):
-        """Commande slash pour supprimer des messages."""
+        """
+        @brief Supprime un nombre défini de messages dans le salon actuel.
+        @param interaction Interaction contenant les informations sur la commande slash.
+        @param nombre Nombre de messages à supprimer (entre 1 et 100).
+        @details Cette commande ne peut être utilisée que par les utilisateurs ayant la permission de gérer les messages.
+        @note Le message confirmant la suppression est envoyé de manière éphémère.
+        """
 
         # Vérifie si l'utilisateur a les permissions
         if not interaction.user.guild_permissions.manage_messages:
@@ -58,11 +62,9 @@ class Admin(commands.Cog):
         )
 
 
-"""
+async def setup(bot):
+    """
     @brief Ajoute le Cog Admin au bot.
     @param bot Instance du bot Discord.
     """
-
-
-async def setup(bot):
     await bot.add_cog(Admin(bot))

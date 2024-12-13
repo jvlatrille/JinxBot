@@ -1,9 +1,3 @@
-"""
-@file Salles.py
-@brief Module gérant les commandes liées aux salles et professeurs pour le bot Discord.
-@details Permet de récupérer des infos sur les salles, les profs, et l'emploi du temps.
-"""
-
 import discord
 import logging
 from discord import app_commands
@@ -13,20 +7,24 @@ from utils.TrouveTaSalle import TrouveTaSalle
 from config import ID_PROMOS, timezone, ROLES
 import datetime
 
-
 """
-    @class Salles
-    @brief Classe principale pour gérer les commandes slash et contextuelles liées aux salles.
-    """
+@file Salles.py
+@brief Module gérant les commandes liées aux salles et professeurs pour le bot Discord.
+@details Permet de récupérer des infos sur les salles, les profs, et l'emploi du temps.
+"""
 
 
 class Salles(commands.Cog):
     """
-        @brief Initialise le cog avec les infos nécessaires.
-    @param bot Instance du bot.
+    @class Salles
+    @brief Classe principale pour gérer les commandes slash et contextuelles liées aux salles.
     """
 
     def __init__(self, bot):
+        """
+        @brief Initialise le cog avec les infos nécessaires.
+        @param bot Instance du bot.
+        """
         self.bot = bot
         self.edt = TrouveTaSalle(ID_PROMOS, refresh_on_init=False)
         self.refresh_edt.start()
@@ -59,39 +57,33 @@ class Salles(commands.Cog):
             "GASTAMBIDE": "MA. Gastambide",
         }
 
-    """
+    async def autocomplete_professeur(
+        self, interaction: discord.Interaction, current: str
+    ):
+        """
         @brief Gère l'autocomplétion pour les noms de profs.
         @param interaction Interaction actuelle.
         @param current Ce que l'utilisateur a tapé.
         @return Liste des suggestions basées sur la saisie.
         """
-
-    async def autocomplete_professeur(
-        self, interaction: discord.Interaction, current: str
-    ):
-        """Méthode pour suggérer des noms de professeurs"""
-        # Filtre les noms en fonction de ce qui est tapé
         suggestions = [
             Choice(name=name, value=key)
             for key, name in self.professeurs.items()
             if current.lower() in name.lower()
         ]
-        # Limite à 25 résultats (Discord impose cette limite)
         return suggestions[:25]
 
-    """
+    def cog_unload(self):
+        """
         @brief Annule les tâches si le cog est déchargé.
         """
-
-    def cog_unload(self):
         self.refresh_edt.cancel()
-
-    """
-        @brief Tâche périodique pour mettre à jour les données des salles.
-        """
 
     @tasks.loop(minutes=10)
     async def refresh_edt(self):
+        """
+        @brief Tâche périodique pour mettre à jour les données des salles.
+        """
         try:
             logging.info("[Salles] Rafraîchissement des emplois du temps")
             result = self.edt.refresh()
@@ -102,31 +94,17 @@ class Salles(commands.Cog):
         except Exception as e:
             logging.error(f"[Salles] Erreur lors du rafraîchissement : {e}")
 
-    @commands.command(name="salles_libres")
-    async def salles_libres(self, ctx):
-        info = self.edt.get_salle_libre()
-        if not info:
-            await ctx.send("Aucune salle libre actuellement.")
-            return
-
-        message = "**Salles libres actuellement :**\n"
-        for salle, creneaux in info.items():
-            message += f"- {salle} : {creneaux[0][0]} à {creneaux[0][1]}\n"
-        await ctx.send(message)
-
-    """
-        @brief Commande slash pour obtenir des infos sur une salle.
-        @param interaction Interaction Discord.
-        @param nom_salle Nom de la salle.
-        """
-
     @app_commands.command(
         name="info_salle",
         description="Obtenir des informations sur une salle spécifique.",
     )
     @app_commands.describe(nom_salle="Nom de la salle à vérifier")
     async def info_salle(self, interaction, nom_salle: str):
-        """Commande slash pour obtenir les informations d'une salle"""
+        """
+        @brief Commande slash pour obtenir des infos sur une salle.
+        @param interaction Interaction Discord.
+        @param nom_salle Nom de la salle.
+        """
         salle_info = self.edt.get_info_salle(nom_salle)
         if "error" in salle_info and salle_info["error"] == "NOT FOUND":
             await interaction.response.send_message(
@@ -134,12 +112,10 @@ class Salles(commands.Cog):
             )
             return
 
-        # Disponibilité
         disponible = salle_info["now"] is None
         status = "Libre" if disponible else "Occupée"
         status_emoji = "🟢" if disponible else "🔴"
 
-        # Cours actuels
         cours_actuels = (
             f"- {salle_info['now']['name']} "
             f"(de {datetime.datetime.fromtimestamp(salle_info['now']['begin']).strftime('%H:%M')} "
@@ -148,7 +124,6 @@ class Salles(commands.Cog):
             else "Aucun cours en cours actuellement."
         )
 
-        # Créneaux libres
         creneaux_libres = "\n".join(
             f"{datetime.datetime.fromtimestamp(cr[0]).strftime('%H:%M')} à {datetime.datetime.fromtimestamp(cr[1]).strftime('%H:%M')}"
             for cr in salle_info["free"]
@@ -156,7 +131,6 @@ class Salles(commands.Cog):
         if not creneaux_libres:
             creneaux_libres = "Aucun créneau disponible aujourd'hui."
 
-        # Création de l'embed
         embed = discord.Embed(
             title=f"Informations sur la salle {nom_salle}",
             color=discord.Color.green() if disponible else discord.Color.red(),
@@ -167,14 +141,7 @@ class Salles(commands.Cog):
         embed.add_field(name="Disponibilités", value=creneaux_libres, inline=False)
         embed.set_footer(text="Les informations peuvent être incomplètes ou inexactes")
 
-        # Envoi de l'embed
         await interaction.response.send_message(embed=embed)
-
-    """
-        @brief Commande slash pour obtenir des infos sur un prof.
-        @param interaction Interaction Discord.
-        @param nom_prof Nom du prof.
-        """
 
     @app_commands.command(
         name="info_prof",
@@ -183,8 +150,11 @@ class Salles(commands.Cog):
     @app_commands.describe(nom_prof="Nom du professeur à vérifier")
     @app_commands.autocomplete(nom_prof=autocomplete_professeur)
     async def info_prof(self, interaction: discord.Interaction, nom_prof: str):
-        """Commande slash pour obtenir les informations sur un professeur"""
-        # Vérifie si le professeur existe
+        """
+        @brief Commande slash pour obtenir des infos sur un prof.
+        @param interaction Interaction Discord.
+        @param nom_prof Nom du prof.
+        """
         if nom_prof.upper() not in self.professeurs:
             await interaction.response.send_message(
                 f"❌ Le professeur '{nom_prof}' n'est pas dans la liste.",
@@ -192,7 +162,6 @@ class Salles(commands.Cog):
             )
             return
 
-        # Récupération des données
         prof_info = self.edt.get_prof(nom_prof.upper())
         if not prof_info:
             await interaction.response.send_message(
@@ -201,7 +170,6 @@ class Salles(commands.Cog):
             )
             return
 
-        # Informations sur le cours actuel
         cours_actuel = (
             f"- **{prof_info['now']['name']}** "
             f"(de {datetime.datetime.fromtimestamp(prof_info['now']['begin']).strftime('%H:%M')} "
@@ -211,7 +179,6 @@ class Salles(commands.Cog):
             else "Aucun cours en cours actuellement."
         )
 
-        # Liste des cours à venir
         cours = "\n".join(
             f"- **{c['name']}** (de {datetime.datetime.fromtimestamp(c['begin']).strftime('%H:%M')} "
             f"à {datetime.datetime.fromtimestamp(c['end']).strftime('%H:%M')}, salle : {c['salle']})"
@@ -220,13 +187,6 @@ class Salles(commands.Cog):
         if not cours:
             cours = "Aucun cours programmé pour aujourd'hui."
 
-        # Cas particulier pour Chbeir
-        if nom_prof.upper() == "CHBEIR":
-            cours_actuel = (
-                "Actuellement en train d'apprendre le PL/SQL à une table basse."
-            )
-
-        # Création de l'embed
         embed = discord.Embed(
             title=f"Informations sur {self.professeurs[nom_prof.upper()]}",
             color=discord.Color.purple(),
@@ -239,9 +199,10 @@ class Salles(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     """
-        @brief Commande slash pour obtenir les salles libres.
-        @param interaction Interaction Discord.
-        """
+    @brief Commande slash pour obtenir les salles libres.
+    @param interaction Instance de l'interaction Discord.
+    @details Cette commande retourne les salles disponibles actuellement, triées par la durée de disponibilité.
+    """
 
     @app_commands.command(
         name="salles_libres",
@@ -288,8 +249,11 @@ class Salles(commands.Cog):
         embed.set_footer(text="Les informations peuvent être incomplètes ou inexactes")
         await interaction.response.send_message(embed=embed)
 
-    """     @brief Commande slash pour afficher l'emploi du temps de l'utilisateur.
-        @param interaction Interaction Discord."""
+    """
+    @brief Commande slash pour afficher l'emploi du temps de l'utilisateur.
+    @param interaction Instance de l'interaction Discord.
+    @details Cette commande récupère l'emploi du temps de l'utilisateur en fonction de ses rôles sur le serveur Discord.
+    """
 
     @app_commands.command(
         name="emploi_du_temps",
@@ -353,12 +317,10 @@ class Salles(commands.Cog):
         # Envoi de l'embed
         await interaction.response.send_message(embed=embed)
 
+    """
+    @brief Ajoute le cog au bot.
+    @param bot Instance du bot Discord.
+    """
 
-"""
-@brief Ajoute le cog au bot.
-@param bot Instance du bot.
-"""
-
-
-async def setup(bot):
-    await bot.add_cog(Salles(bot))
+    async def setup(bot):
+        await bot.add_cog(Salles(bot))

@@ -11,22 +11,18 @@ import datetime
 import concurrent
 import concurrent.futures
 import pytz
-
 timezone = pytz.timezone("Europe/Paris")
 
 """
-    @class TrouveTaSalle
-    @brief Classe principale pour gérer les emplois du temps et trouver les salles libres.
-    """
-
-
+@class TrouveTaSalle
+@brief Classe principale pour gérer les emplois du temps et trouver les salles libres.
+"""
 class TrouveTaSalle:
     """
     @brief Initialisation de la classe.
     @param listeID Dictionnaire des IDs pour les emplois du temps.
-    @param refresh_on_init Active ou non la mise à jour dès l'init.
+    @param refresh_on_init Indique si les données doivent être mises à jour dès l'initialisation.
     """
-
     def __init__(self, listeID: dict, refresh_on_init: bool = True):
         if type(listeID) != dict:
             raise TypeError("listeID doit etre un dictionnaire")
@@ -58,21 +54,20 @@ class TrouveTaSalle:
             self.active = True
 
     """
-        @brief Récupère un fichier ICS depuis une URL.
-        @param id ID de l'emploi du temps.
-        @param TD Nom du groupe (TD/TP).
-        @return Contenu brut du fichier ICS.
-        """
-
+    @brief Récupère un fichier ICS depuis une URL.
+    @param id Identifiant unique de l'emploi du temps.
+    @param TD Nom du groupe (TD ou TP).
+    @return Une chaîne brute contenant le contenu du fichier ICS.
+    """
     def get_TD_ics(self, id: str, TD: str) -> str:
         url = "https://www.iutbayonne.univ-pau.fr/outils/edt/default/export?ID=" + id
         return (requests.get(url).text, id, TD)
 
     """
-        @brief Mets à jour les données des emplois du temps.
-        @return "ok" si tout s'est bien passé, ou un message spécifique (e.g., weekend).
-        """
-
+    @brief Met à jour les données des emplois du temps.
+    @details Récupère les informations depuis les fichiers ICS et traite les doublons et événements obsolètes.
+    @return Une chaîne indiquant le statut de la mise à jour ("ok", "weekend", ou "hour").
+    """
     def refresh(self):
 
         self.date = datetime.datetime.now()
@@ -136,11 +131,10 @@ class TrouveTaSalle:
         return "ok"
 
     """
-        @brief Récupère les événements associés aux salles d'un TD.
-        @param TD Données brutes du fichier ICS.
-        @return Dictionnaire contenant les salles et leurs événements.
-        """
-
+    @brief Récupère les événements associés aux salles d'un TD.
+    @param TD Données brutes du fichier ICS.
+    @return Dictionnaire contenant les salles et leurs événements associés.
+    """
     def get_TD_salle(self, TD: list) -> dict:
         # On recupere les evenements du calendrier
         events = list(Calendar(TD[0]).events)
@@ -192,10 +186,9 @@ class TrouveTaSalle:
         return salles_TD
 
     """
-        @brief Vérifie si une actualisation des données est nécessaire.
-        @details Une actualisation est déclenchée si plus de 10 minutes se sont écoulées depuis le dernier rafraîchissement.
-        """
-
+    @brief Vérifie si une actualisation des données est nécessaire.
+    @details Une actualisation est déclenchée si plus de 10 minutes se sont écoulées depuis le dernier rafraîchissement et si l'option de mise à jour automatique est activée.
+    """
     def need_refresh(self):
         if (
             datetime.datetime.now() - self.date > datetime.timedelta(minutes=10)
@@ -205,11 +198,10 @@ class TrouveTaSalle:
             self.refresh()
 
     """
-        @brief Vérifie si une salle existe dans la liste des salles.
-        @param salle Nom de la salle.
-        @return "NOT FOUND" si la salle n'existe pas, "NO DATA" si aucune donnée n'est disponible, True sinon.
-        """
-
+    @brief Vérifie si une salle existe dans la liste des salles.
+    @param salle Nom de la salle à vérifier.
+    @return "NOT FOUND" si la salle n'existe pas, "NO DATA" si aucune donnée n'est disponible pour la salle, True si tout est correct.
+    """
     def check_salle(self, salle: str):
         if salle not in self.listeSallesTD + self.listeSallesPC:
             return "NOT FOUND"
@@ -218,11 +210,10 @@ class TrouveTaSalle:
         return True
 
     """
-        @brief Récupère les informations liées à un professeur.
-        @param prof Nom du professeur (doit être en majuscules).
-        @return Dictionnaire contenant les informations sur le professeur, y compris les cours actuels et à venir.
-        """
-
+    @brief Récupère les informations liées à un professeur.
+    @param prof Nom du professeur (doit être en majuscules).
+    @return Dictionnaire contenant les informations sur le professeur, incluant les cours actuels et les cours à venir.
+    """
     def get_prof(self, prof: str):
         self.need_refresh()
         # On met le prof en majuscule car les noms sont en majuscule dans les descriptions
@@ -276,11 +267,10 @@ class TrouveTaSalle:
         return prof_info
 
     """
-        @brief Identifie les créneaux libres d'une salle.
-        @param salle Nom de la salle.
-        @return Liste des créneaux libres.
-        """
-
+    @brief Identifie les créneaux libres d'une salle spécifique.
+    @param salle Nom de la salle à analyser.
+    @return Liste des créneaux libres sous forme de plages horaires [début, fin].
+    """
     def detecter_creneaux_libres_salle(self, salle: str):
         creneaux_libres = []
         # Disons qu'une salle est ouverte de 8h a 18h30
@@ -331,11 +321,10 @@ class TrouveTaSalle:
         return creneaux_libres
 
     """
-        @brief Identifie les créneaux libres pour toutes les salles.
-        @details Parcourt toutes les salles et calcule les plages horaires disponibles.
-        @return Dictionnaire avec les salles comme clés et les créneaux libres comme valeurs.
-        """
-
+    @brief Identifie les créneaux libres pour toutes les salles.
+    @details Parcourt toutes les salles pour calculer leurs plages horaires disponibles.
+    @return Dictionnaire où les clés sont les noms des salles et les valeurs sont les créneaux libres.
+    """
     def detecter_creneaux_libres(self):
         creneaux_libres = {}
         for salle in self.salles:
@@ -343,11 +332,10 @@ class TrouveTaSalle:
         return creneaux_libres
 
     """
-        @brief Récupère les infos sur une salle spécifique.
-        @param salle Nom de la salle.
-        @return Dictionnaire avec les infos sur la salle.
-        """
-
+    @brief Récupère les informations détaillées sur une salle spécifique.
+    @param salle Nom de la salle pour laquelle les informations sont demandées.
+    @return Dictionnaire contenant les informations sur la salle, y compris les cours actuels, les cours à venir, et les créneaux libres.
+    """
     def get_info_salle(self, salle: str) -> dict:
         self.need_refresh()
         data = {"checked": self.date.timestamp()}
@@ -381,11 +369,10 @@ class TrouveTaSalle:
         return data
 
     """
-        @brief Trouve les salles actuellement libres.
-        @details Une salle est considérée comme libre si aucun événement ne s'y déroule actuellement.
-        @return Dictionnaire avec les salles libres et leurs créneaux disponibles.
-        """
-
+    @brief Trouve les salles actuellement libres.
+    @details Une salle est considérée comme libre si aucun événement ne s'y déroule au moment actuel.
+    @return Dictionnaire contenant les salles libres comme clés et leurs créneaux disponibles comme valeurs.
+    """
     def get_salle_libre(self):
         self.need_refresh()
         salle_libre = {}
@@ -408,11 +395,10 @@ class TrouveTaSalle:
         return salle_libre
 
     """
-        @brief Récupère les cours pour un groupe spécifique (TD/TP).
-        @param anneTDTP Identifiant du groupe au format "Année-TD-TP".
-        @return Dictionnaire contenant la liste des cours pour le groupe donné.
-        """
-
+    @brief Récupère les cours pour un groupe spécifique (TD/TP).
+    @param anneTDTP Identifiant du groupe au format "Année-TD-TP" (par exemple, "2-TD1-TP1").
+    @return Dictionnaire contenant la liste des cours pour le groupe donné, avec les informations de salle, nom, début et fin.
+    """
     def get_cours_TD(self, anneTDTP: str):
         self.need_refresh()
         data = {"checked": self.date.timestamp(), "cours": []}

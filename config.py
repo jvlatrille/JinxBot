@@ -1,37 +1,41 @@
-"""
-@file config.py
-@brief Fichier de configuration pour le bot.
-@details Ici, on stocke toutes les configs importantes : token, promos, rôles, et fuseau horaire.
-"""
-
 import os
 from dotenv import load_dotenv
 import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import confidentiel
 import pytz
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 """
+@file config.py
+@brief Fichier de configuration pour le bot Discord.
+@details Stocke les informations essentielles comme les tokens, les promotions, les rôles, et les fuseaux horaires.
+"""
+
+# Chargement des variables d'environnement
+"""
 @brief Charge les variables d'environnement depuis un fichier `.env`.
-@details Utile pour garder des infos sensibles (comme les tokens) hors du code visible( c'est pas ce que j'utilise, mais c'est une bonne pratique).
+@details Permet de garder des informations sensibles hors du code visible.
 """
 load_dotenv()
 
-
+# Token du bot
 """
 @var BOT_TOKEN
-Le token secret du bot, importé depuis le module confidentiel (fichier local non partagé).
+@brief Token secret pour authentifier le bot Discord.
+@details Importé depuis le module confidentiel pour garantir la sécurité.
 """
 BOT_TOKEN = confidentiel.TOKENBOTPROMO
 
-
+# Configuration des promotions
 """
 @var SEMESTRE
-Le semestre en cours. Défini dans les variables d'environnement ou "1" par défaut.
+@brief Définit le semestre en cours.
+@details Valeur par défaut : "1" si non spécifié dans les variables d'environnement.
+
 @var ID_PROMOS
-Dictionnaire associant chaque groupe TD/TP à un ID unique pour l'emploi du temps.
+@brief Associe chaque groupe TD/TP à un identifiant unique.
+@details Utilisé pour récupérer les emplois du temps des différents groupes.
 """
 SEMESTRE = os.getenv("SEMESTER", "1")
 ID_PROMOS = {
@@ -46,10 +50,11 @@ ID_PROMOS = {
     "2-TD2-TP2": "398",
 }
 
-
+# Configuration des rôles Discord
 """
 @var ROLES
-Dictionnaire des rôles Discord associés aux TD, TP, et années. Permet de savoir qui appartient à quel groupe.
+@brief Structure hiérarchique des rôles sur le serveur Discord.
+@details Contient les rôles par TD, TP et année, avec leurs identifiants.
 """
 ROLES = {
     "TD": {
@@ -71,9 +76,10 @@ ROLES = {
     },
 }
 
-
+# Fuseau horaire
 """
 @var timezone
-Fuseau horaire utilisé pour tout ce qui est lié au temps (horaires, dates, etc.).
+@brief Définit le fuseau horaire utilisé par le bot.
+@details Par défaut : Europe/Paris.
 """
 timezone = pytz.timezone("Europe/Paris")
