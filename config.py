@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import confidentiel
+import pytz
 
 # Chargement des variables d'environnement
 load_dotenv()
@@ -48,4 +49,4 @@ ROLES = {
 }
 
 # Configuration du fuseau horaire
-timezone = "Europe/Paris"
+timezone = pytz.timezone("Europe/Paris")
