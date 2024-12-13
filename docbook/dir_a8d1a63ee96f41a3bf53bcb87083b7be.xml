@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a8d1a63ee96f41a3bf53bcb87083b7be" xml:lang="fr">
+<title>Répertoire de référence de Cogs/salles</title>
+<indexterm><primary>Répertoire de référence de Cogs/salles</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__cogs_2salles_2____init_____8py">__init__.py</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__salles_8py">Salles.py</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

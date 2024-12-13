@@ -1,14 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Jinx: Membres de l&#39;espace de nommage</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -19,9 +23,9 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
+ <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Jinx.jpg"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td id="projectalign">
    <div id="projectname">Jinx
    </div>
   </td>
@@ -30,10 +34,15 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.9.2 -->
+<!-- Généré par Doxygen 1.12.0 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -41,13 +50,19 @@ var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -57,27 +72,35 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>bot&#160;:&#160;<a class="el" href="namespacemain.html#a025c12c4c0c5e85e1f13223fbf66c204">main</a></li>
-<li>BOT_TOKEN&#160;:&#160;<a class="el" href="namespaceconfig.html#aca9fa8c45342bccc77657f6015557b0c">config</a></li>
-<li>format&#160;:&#160;<a class="el" href="namespacemain.html#a758a4b3c52742d78aa30e49d058acea4">main</a></li>
-<li>ID_PROMOS&#160;:&#160;<a class="el" href="namespaceconfig.html#a518703fd5ecccac65cb6b7c23d0775de">config</a></li>
-<li>initial_extensions&#160;:&#160;<a class="el" href="namespacemain.html#af7073a48ccc5ed6070f3d14d667ae48c">main</a></li>
-<li>level&#160;:&#160;<a class="el" href="namespacemain.html#ad39dcd94f0ffc845ab416c0783c20d25">main</a></li>
-<li>ROLES&#160;:&#160;<a class="el" href="namespaceconfig.html#ac088a4e6f36362d607802cac8c54f7c6">config</a></li>
-<li>SEMESTRE&#160;:&#160;<a class="el" href="namespaceconfig.html#a2b44d53936966745d12cd91bd9d22ead">config</a></li>
-<li>timezone&#160;:&#160;<a class="el" href="namespaceconfig.html#a2f0da833b52a6a677ed139a507c593ec">config</a></li>
+<div class="textblock">&#160;</div><ul>
+<li>bot&#160;:&#160;<a class="el" href="namespacemain.html#a63afbe8ca6c6cef9d777272fccaefc69">main</a></li>
+<li>BOT_TOKEN&#160;:&#160;<a class="el" href="namespaceconfig.html#a521d85083e689e4cd64156445ba533b2">config</a></li>
+<li>format&#160;:&#160;<a class="el" href="namespacemain.html#a387137c43ed9616d39ba90e890d181eb">main</a></li>
+<li>ID_PROMOS&#160;:&#160;<a class="el" href="namespaceconfig.html#a2abb95064e24ccf05972acb461d09c22">config</a></li>
+<li>initial_extensions&#160;:&#160;<a class="el" href="namespacemain.html#a44c97348474f586887752f40d029da97">main</a></li>
+<li>level&#160;:&#160;<a class="el" href="namespacemain.html#afde8e18a788ccc92fc61cab298bca7e3">main</a></li>
+<li>ROLES&#160;:&#160;<a class="el" href="namespaceconfig.html#a8f97ae1d39f7c46382f3c50885442418">config</a></li>
+<li>SEMESTRE&#160;:&#160;<a class="el" href="namespaceconfig.html#af316a4e6741786ec1d2d58d69753e5cc">config</a></li>
+<li>timezone&#160;:&#160;<a class="el" href="namespaceconfig.html#ac2bd5c4d78a5e3976f4278479d0ee7f9">config</a>, <a class="el" href="namespaceutils_1_1_trouve_ta_salle.html#ac2bd5c4d78a5e3976f4278479d0ee7f9">utils.TrouveTaSalle</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
 </small></address>
+</div><!-- doc-content -->
 </body>
 </html>

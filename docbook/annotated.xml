@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="fr">
+<title>Structures de données</title>
+Liste des structures de données avec une brève description :<link linkend="_class_cogs_1_1admin_1_1_admin">Admin</link><link linkend="_class_cogs_1_1ping_1_1_ping">Ping</link><link linkend="_class_cogs_1_1salles_1_1_salles_1_1_salles">Salles</link><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle">TrouveTaSalle</link></section>

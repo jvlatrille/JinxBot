@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_cogs_1_1ping" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage Cogs.ping</title>
+<indexterm><primary>Cogs.ping</primary></indexterm>
+<simplesect>
+    <title>Structures de données    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_cogs_1_1ping_1_1_ping">Ping</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespace_cogs_1_1ping_1a5fdee29a83fb0f674f3021783ead2aa8">setup</link> (bot)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des fonctions</title>
+<anchor xml:id="_namespace_cogs_1_1ping_1a5fdee29a83fb0f674f3021783ead2aa8"/><section>
+    <title>setup()</title>
+<indexterm><primary>setup</primary><secondary>Cogs.ping</secondary></indexterm>
+<indexterm><primary>Cogs.ping</primary><secondary>setup</secondary></indexterm>
+<para><computeroutput>setup ( bot)</computeroutput></para>
+<para><literallayout><computeroutput>@brief Ajoute le Cog Ping au bot.
+@param bot Instance du bot Discord.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+</section>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceconfig" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage config</title>
+<indexterm><primary>config</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceconfig_1a521d85083e689e4cd64156445ba533b2">BOT_TOKEN</link> = confidentiel.TOKENBOTPROMO</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceconfig_1af316a4e6741786ec1d2d58d69753e5cc">SEMESTRE</link> = os.getenv(&quot;SEMESTER&quot;, &quot;1&quot;)</para>
+</listitem>
+            <listitem><para>dict <link linkend="_namespaceconfig_1a2abb95064e24ccf05972acb461d09c22">ID_PROMOS</link></para>
+</listitem>
+            <listitem><para>dict <link linkend="_namespaceconfig_1a8f97ae1d39f7c46382f3c50885442418">ROLES</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceconfig_1ac2bd5c4d78a5e3976f4278479d0ee7f9">timezone</link> = pytz.timezone(&quot;Europe/Paris&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des variables</title>
+<anchor xml:id="_namespaceconfig_1a521d85083e689e4cd64156445ba533b2"/><section>
+    <title>BOT_TOKEN</title>
+<indexterm><primary>BOT_TOKEN</primary><secondary>config</secondary></indexterm>
+<indexterm><primary>config</primary><secondary>BOT_TOKEN</secondary></indexterm>
+<para><computeroutput>BOT_TOKEN = confidentiel.TOKENBOTPROMO</computeroutput></para></section>
+<anchor xml:id="_namespaceconfig_1a2abb95064e24ccf05972acb461d09c22"/><section>
+    <title>ID_PROMOS</title>
+<indexterm><primary>ID_PROMOS</primary><secondary>config</secondary></indexterm>
+<indexterm><primary>config</primary><secondary>ID_PROMOS</secondary></indexterm>
+<para><computeroutput>dict ID_PROMOS</computeroutput></para><emphasis role="strong">Valeur initiale :</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;{
+2 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;1-TD1-TP1&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;368&quot;</emphasis>,
+3 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;1-TD1-TP2&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;369&quot;</emphasis>,
+4 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;1-TD2-TP3&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;371&quot;</emphasis>,
+5 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;1-TD2-TP4&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;372&quot;</emphasis>,
+6 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;1-TD3-TP5&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;373&quot;</emphasis>,
+7 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;2-TD1-TP1&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;394&quot;</emphasis>,
+8 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;2-TD1-TP2&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;395&quot;</emphasis>,
+9 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;2-TD2-TP1&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;397&quot;</emphasis>,
+10 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;2-TD2-TP2&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;398&quot;</emphasis>,
+11 }
+</programlisting></section>
+<anchor xml:id="_namespaceconfig_1a8f97ae1d39f7c46382f3c50885442418"/><section>
+    <title>ROLES</title>
+<indexterm><primary>ROLES</primary><secondary>config</secondary></indexterm>
+<indexterm><primary>config</primary><secondary>ROLES</secondary></indexterm>
+<para><computeroutput>dict ROLES</computeroutput></para><emphasis role="strong">Valeur initiale :</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;{
+2 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;TD&quot;</emphasis>:&#32;{
+3 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959814970336510022&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TD1&quot;</emphasis>,
+4 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815001642790942&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TD2&quot;</emphasis>,
+5 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815034530324590&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TD3&quot;</emphasis>,
+6 &#32;&#32;&#32;&#32;},
+7 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;TP&quot;</emphasis>:&#32;{
+8 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815069665996800&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TP1&quot;</emphasis>,
+9 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815092390752256&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TP2&quot;</emphasis>,
+10 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815110157828147&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TP3&quot;</emphasis>,
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815124938534962&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TP4&quot;</emphasis>,
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959815142038700052&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;TP5&quot;</emphasis>,
+13 &#32;&#32;&#32;&#32;},
+14 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Année&quot;</emphasis>:&#32;{
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959809924798496799&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;1&quot;</emphasis>,
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959809978875650108&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;2&quot;</emphasis>,
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;959810006537093210&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;3&quot;</emphasis>,
+18 &#32;&#32;&#32;&#32;},
+19 }
+</programlisting></section>
+<anchor xml:id="_namespaceconfig_1af316a4e6741786ec1d2d58d69753e5cc"/><section>
+    <title>SEMESTRE</title>
+<indexterm><primary>SEMESTRE</primary><secondary>config</secondary></indexterm>
+<indexterm><primary>config</primary><secondary>SEMESTRE</secondary></indexterm>
+<para><computeroutput>SEMESTRE = os.getenv(&quot;SEMESTER&quot;, &quot;1&quot;)</computeroutput></para></section>
+<anchor xml:id="_namespaceconfig_1ac2bd5c4d78a5e3976f4278479d0ee7f9"/><section>
+    <title>timezone</title>
+<indexterm><primary>timezone</primary><secondary>config</secondary></indexterm>
+<indexterm><primary>config</primary><secondary>timezone</secondary></indexterm>
+<para><computeroutput>timezone = pytz.timezone(&quot;Europe/Paris&quot;)</computeroutput></para></section>
+</section>
+</section>

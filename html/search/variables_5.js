@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['semestre_0',['SEMESTRE',['../namespaceconfig.html#a2b44d53936966745d12cd91bd9d22ead',1,'config']]]
+  ['id_5fpromos_0',['ID_PROMOS',['../namespaceconfig.html#a2abb95064e24ccf05972acb461d09c22',1,'config']]],
+  ['initial_5fextensions_1',['initial_extensions',['../namespacemain.html#a44c97348474f586887752f40d029da97',1,'main']]]
 ];

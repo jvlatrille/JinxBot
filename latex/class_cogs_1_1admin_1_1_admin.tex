@@ -1,0 +1,68 @@
+\doxysection{Référence de la classe Admin}
+\hypertarget{class_cogs_1_1admin_1_1_admin}{}\label{class_cogs_1_1admin_1_1_admin}\index{Admin@{Admin}}
+Graphe d\textquotesingle{}héritage de Admin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cogs_1_1admin_1_1_admin}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cogs_1_1admin_1_1_admin_a214e5f22a181af8e53ef7e793d9e3492}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_cogs_1_1admin_1_1_admin_a63afbe8ca6c6cef9d777272fccaefc69}{bot}})
+\item 
+\mbox{\hyperlink{class_cogs_1_1admin_1_1_admin_a3007559489f969ae4d0603f094418c24}{clear}} (self, discord.\+Interaction interaction, int nombre)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cogs_1_1admin_1_1_admin_a63afbe8ca6c6cef9d777272fccaefc69}{bot}} = bot
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\begin{DoxyVerb}@class Admin
+@brief Cog pour les commandes d'administration.
+@details Fournit des outils pour gérer efficacement les salons Discord.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{class_cogs_1_1admin_1_1_admin_a214e5f22a181af8e53ef7e793d9e3492}\index{Admin@{Admin}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_cogs_1_1admin_1_1_admin_a214e5f22a181af8e53ef7e793d9e3492} 
+\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{bot}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Initialise le Cog Admin.
+@param bot Instance du bot Discord.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{class_cogs_1_1admin_1_1_admin_a3007559489f969ae4d0603f094418c24}\index{Admin@{Admin}!clear@{clear}}
+\index{clear@{clear}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_cogs_1_1admin_1_1_admin_a3007559489f969ae4d0603f094418c24} 
+clear (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{discord.\+Interaction}]{interaction}{, }\item[{int}]{nombre}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Supprime un nombre défini de messages dans le salon actuel.
+@param interaction Interaction contenant les informations sur la commande slash.
+@param nombre Nombre de messages à supprimer (entre 1 et 100).
+@details Cette commande ne peut être utilisée que par les utilisateurs ayant la permission de gérer les messages.
+@note Le message confirmant la suppression est envoyé de manière éphémère.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des champs}
+\Hypertarget{class_cogs_1_1admin_1_1_admin_a63afbe8ca6c6cef9d777272fccaefc69}\index{Admin@{Admin}!bot@{bot}}
+\index{bot@{bot}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{bot}{bot}}
+{\footnotesize\ttfamily \label{class_cogs_1_1admin_1_1_admin_a63afbe8ca6c6cef9d777272fccaefc69} 
+bot = bot}
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+Cogs/\mbox{\hyperlink{admin_8py}{admin.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_config_8py" xml:lang="fr">
+<title>Référence du fichier config.py</title>
+<indexterm><primary>config.py</primary></indexterm>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceconfig">config</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceconfig_1a521d85083e689e4cd64156445ba533b2">BOT_TOKEN</link> = confidentiel.TOKENBOTPROMO</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceconfig_1af316a4e6741786ec1d2d58d69753e5cc">SEMESTRE</link> = os.getenv(&quot;SEMESTER&quot;, &quot;1&quot;)</para>
+</listitem>
+            <listitem><para>dict <link linkend="_namespaceconfig_1a2abb95064e24ccf05972acb461d09c22">ID_PROMOS</link></para>
+</listitem>
+            <listitem><para>dict <link linkend="_namespaceconfig_1a8f97ae1d39f7c46382f3c50885442418">ROLES</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceconfig_1ac2bd5c4d78a5e3976f4278479d0ee7f9">timezone</link> = pytz.timezone(&quot;Europe/Paris&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

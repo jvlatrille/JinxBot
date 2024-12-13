@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_cogs_1_1ping_1_1_ping" xml:lang="fr">
+<title>Référence de la classe Ping</title>
+<indexterm><primary>Ping</primary></indexterm>
+<para>Graphe d&apos;héritage de Ping:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_cogs_1_1ping_1_1_ping.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_cogs_1_1ping_1_1_ping_1a214e5f22a181af8e53ef7e793d9e3492">__init__</link> (self, <link linkend="_class_cogs_1_1ping_1_1_ping_1a63afbe8ca6c6cef9d777272fccaefc69">bot</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_class_cogs_1_1ping_1_1_ping_1ad9ab404e34ff9bcb96c90691441f36fd">ping_slash</link> (self, interaction)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Champs de données    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_cogs_1_1ping_1_1_ping_1a63afbe8ca6c6cef9d777272fccaefc69">bot</link> = bot</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para><literallayout><computeroutput>@class Ping
+@brief Cog pour la commande &apos;/ping&apos;.
+@details Fournit une commande pour mesurer la latence du bot.
+</computeroutput></literallayout> </para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_cogs_1_1ping_1_1_ping_1a214e5f22a181af8e53ef7e793d9e3492"/><section>
+    <title>__init__()</title>
+<indexterm><primary>__init__</primary><secondary>Ping</secondary></indexterm>
+<indexterm><primary>Ping</primary><secondary>__init__</secondary></indexterm>
+<para><computeroutput>__init__ ( self,  bot)</computeroutput></para>
+<para><literallayout><computeroutput>@brief Initialise le Cog Ping.
+@param bot Instance du bot Discord.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_cogs_1_1ping_1_1_ping_1ad9ab404e34ff9bcb96c90691441f36fd"/><section>
+    <title>ping_slash()</title>
+<indexterm><primary>ping_slash</primary><secondary>Ping</secondary></indexterm>
+<indexterm><primary>Ping</primary><secondary>ping_slash</secondary></indexterm>
+<para><computeroutput>ping_slash ( self,  interaction)</computeroutput></para>
+<para><literallayout><computeroutput>@brief Retourne le temps de latence entre le bot et Discord.
+@param interaction Interaction contenant les informations de la commande.
+@details La latence est calculée en millisecondes et affichée dans la réponse.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Documentation des champs</title>
+<anchor xml:id="_class_cogs_1_1ping_1_1_ping_1a63afbe8ca6c6cef9d777272fccaefc69"/><section>
+    <title>bot</title>
+<indexterm><primary>bot</primary><secondary>Ping</secondary></indexterm>
+<indexterm><primary>Ping</primary><secondary>bot</secondary></indexterm>
+<para><computeroutput>bot = bot</computeroutput></para></section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Cogs/<link linkend="_ping_8py">ping.py</link></section>
+</section>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_cogs" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage Cogs</title>
+<indexterm><primary>Cogs</primary></indexterm>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_cogs_1_1admin">admin</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_cogs_1_1ping">ping</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_cogs_1_1salles">salles</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

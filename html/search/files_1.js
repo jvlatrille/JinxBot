@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2epy_0',['main.py',['../main_8py.html',1,'']]]
+  ['admin_2epy_0',['admin.py',['../admin_8py.html',1,'']]]
 ];

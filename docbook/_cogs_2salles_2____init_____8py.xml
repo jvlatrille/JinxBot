@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__cogs_2salles_2____init_____8py" xml:lang="fr">
+<title>Référence du fichier Cogs/salles/__init__.py</title>
+<indexterm><primary>Cogs/salles/__init__.py</primary></indexterm>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_cogs">Cogs</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_cogs_1_1salles">Cogs.salles</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

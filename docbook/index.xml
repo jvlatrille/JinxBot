@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="fr">
+    <info>
+    <title>Jinx</title>
+    </info>
+    <xi:include href="md__r_e_a_d_m_e.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<chapter>
+    <title>Documentation des espaces de nommage</title>
+<xi:include href="namespace_cogs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_cogs_1_1admin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_cogs_1_1ping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_cogs_1_1salles.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_cogs_1_1salles_1_1_salles.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceconfig.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespacemain.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceutils.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceutils_1_1_trouve_ta_salle.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentation des structures de données</title>
+    <xi:include href="class_cogs_1_1admin_1_1_admin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_cogs_1_1ping_1_1_ping.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_cogs_1_1salles_1_1_salles_1_1_salles.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentation des fichiers</title>
+    <xi:include href="admin_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="ping_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_cogs_2____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_cogs_2salles_2____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="utils_2____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_salles_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="config_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_r_e_a_d_m_e_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_trouve_ta_salle_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

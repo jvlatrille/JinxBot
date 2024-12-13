@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_cogs_1_1admin" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage Cogs.admin</title>
+<indexterm><primary>Cogs.admin</primary></indexterm>
+<simplesect>
+    <title>Structures de données    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_cogs_1_1admin_1_1_admin">Admin</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespace_cogs_1_1admin_1a5fdee29a83fb0f674f3021783ead2aa8">setup</link> (bot)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des fonctions</title>
+<anchor xml:id="_namespace_cogs_1_1admin_1a5fdee29a83fb0f674f3021783ead2aa8"/><section>
+    <title>setup()</title>
+<indexterm><primary>setup</primary><secondary>Cogs.admin</secondary></indexterm>
+<indexterm><primary>Cogs.admin</primary><secondary>setup</secondary></indexterm>
+<para><computeroutput>setup ( bot)</computeroutput></para>
+<para><literallayout><computeroutput>@brief Ajoute le Cog Admin au bot.
+@param bot Instance du bot Discord.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+</section>

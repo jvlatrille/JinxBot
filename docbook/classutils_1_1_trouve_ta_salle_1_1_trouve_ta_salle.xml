@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle" xml:lang="fr">
+<title>Référence de la classe TrouveTaSalle</title>
+<indexterm><primary>TrouveTaSalle</primary></indexterm>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ae1ad986ac0315797772326aa1c040fe1">__init__</link> (self, dict <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a528ea17ceca1b4d8b98b16d619e31227">listeID</link>, bool <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a57e6081523f15f54bed12c097f839694">refresh_on_init</link>=True)</para>
+</listitem>
+            <listitem><para>str <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a8ce91aba145bad6c4d5fc1cd2f40ed4a">get_TD_ics</link> (self, str id, str TD)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a0fceacdb1b62b7b08237a39123494dca">refresh</link> (self)</para>
+</listitem>
+            <listitem><para>dict <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a024092b62ce1ae44c72434846da0ff6a">get_TD_salle</link> (self, list TD)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a24c256f661c854f5f1a18719b13abf09">need_refresh</link> (self)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a21cd1e1e631d8658398f9b9f191e4aa7">check_salle</link> (self, str salle)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ab1aa7102c944b2453dfbeb61664a68d2">get_prof</link> (self, str prof)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ae634c1aadb4ff4df5cd793da4568a9f5">detecter_creneaux_libres_salle</link> (self, str salle)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a31dee002e181e65c8304f89acdf5d9dc">detecter_creneaux_libres</link> (self)</para>
+</listitem>
+            <listitem><para>dict <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a0dd941c6846c5b3b39337613e08b73a7">get_info_salle</link> (self, str salle)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1af54ec8bcfb26f42caaf2efcf8f8f8d83">get_salle_libre</link> (self)</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a45039175239a408ef1a64cdb934f758d">get_cours_TD</link> (self, str anneTDTP)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Champs de données    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a528ea17ceca1b4d8b98b16d619e31227">listeID</link> = listeID</para>
+</listitem>
+            <listitem><para>list <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a1db5cb5e3624b4d03d40037965f5261c">listeSallesPC</link></para>
+</listitem>
+            <listitem><para>list <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1af6c7d64582ea8c1a8b29907c40a203e0">listeSallesTD</link> = [&quot;124&quot;, &quot;125&quot;, &quot;126&quot;, &quot;127&quot;, &quot;129&quot;, &quot;138&quot;]</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a57e6081523f15f54bed12c097f839694">refresh_on_init</link> = refresh_on_init</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a26e9c310f0ff6151d48550c2b6b2b185">lock</link> = False</para>
+</listitem>
+            <listitem><para>dict <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1acbd5668deef0c3f02132ac19b7eac0c6">salles</link> = {}</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a03c996f9fcf0e10baeb3e700be0c409a">active</link> = self.refresh()</para>
+</listitem>
+            <listitem><para><link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ade6a701b82b93dfb7eae4e79cd3b18a6">date</link> = datetime.datetime.now()</para>
+</listitem>
+            <listitem><para>list <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ae822a482a803dc5834a4f8e061a5d316">salles</link> = []</para>
+</listitem>
+            <listitem><para>list <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ad87049c61d875e3349b248c0802b322c">lock</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para><literallayout><computeroutput>@brief Initialisation de la classe.
+@param listeID Dictionnaire des IDs pour les emplois du temps.
+@param refresh_on_init Indique si les données doivent être mises à jour dès l&apos;initialisation.
+</computeroutput></literallayout> </para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ae1ad986ac0315797772326aa1c040fe1"/><section>
+    <title>__init__()</title>
+<indexterm><primary>__init__</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>__init__</secondary></indexterm>
+<para><computeroutput>__init__ ( self, dict listeID, bool  refresh_on_init = <computeroutput>True</computeroutput>
+)</computeroutput></para></section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a21cd1e1e631d8658398f9b9f191e4aa7"/><section>
+    <title>check_salle()</title>
+<indexterm><primary>check_salle</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>check_salle</secondary></indexterm>
+<para><computeroutput>check_salle ( self, str salle)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a31dee002e181e65c8304f89acdf5d9dc"/><section>
+    <title>detecter_creneaux_libres()</title>
+<indexterm><primary>detecter_creneaux_libres</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>detecter_creneaux_libres</secondary></indexterm>
+<para><computeroutput>detecter_creneaux_libres ( self)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ae634c1aadb4ff4df5cd793da4568a9f5"/><section>
+    <title>detecter_creneaux_libres_salle()</title>
+<indexterm><primary>detecter_creneaux_libres_salle</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>detecter_creneaux_libres_salle</secondary></indexterm>
+<para><computeroutput>detecter_creneaux_libres_salle ( self, str salle)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a45039175239a408ef1a64cdb934f758d"/><section>
+    <title>get_cours_TD()</title>
+<indexterm><primary>get_cours_TD</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>get_cours_TD</secondary></indexterm>
+<para><computeroutput>get_cours_TD ( self, str anneTDTP)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a0dd941c6846c5b3b39337613e08b73a7"/><section>
+    <title>get_info_salle()</title>
+<indexterm><primary>get_info_salle</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>get_info_salle</secondary></indexterm>
+<para><computeroutput> dict get_info_salle ( self, str salle)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ab1aa7102c944b2453dfbeb61664a68d2"/><section>
+    <title>get_prof()</title>
+<indexterm><primary>get_prof</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>get_prof</secondary></indexterm>
+<para><computeroutput>get_prof ( self, str prof)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1af54ec8bcfb26f42caaf2efcf8f8f8d83"/><section>
+    <title>get_salle_libre()</title>
+<indexterm><primary>get_salle_libre</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>get_salle_libre</secondary></indexterm>
+<para><computeroutput>get_salle_libre ( self)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a8ce91aba145bad6c4d5fc1cd2f40ed4a"/><section>
+    <title>get_TD_ics()</title>
+<indexterm><primary>get_TD_ics</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>get_TD_ics</secondary></indexterm>
+<para><computeroutput> str get_TD_ics ( self, str id, str TD)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a024092b62ce1ae44c72434846da0ff6a"/><section>
+    <title>get_TD_salle()</title>
+<indexterm><primary>get_TD_salle</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>get_TD_salle</secondary></indexterm>
+<para><computeroutput> dict get_TD_salle ( self, list TD)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a24c256f661c854f5f1a18719b13abf09"/><section>
+    <title>need_refresh()</title>
+<indexterm><primary>need_refresh</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>need_refresh</secondary></indexterm>
+<para><computeroutput>need_refresh ( self)</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a0fceacdb1b62b7b08237a39123494dca"/><section>
+    <title>refresh()</title>
+<indexterm><primary>refresh</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>refresh</secondary></indexterm>
+<para><computeroutput>refresh ( self)</computeroutput></para></section>
+</section>
+<section>
+<title>Documentation des champs</title>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a03c996f9fcf0e10baeb3e700be0c409a"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>bool active = self.refresh()</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ade6a701b82b93dfb7eae4e79cd3b18a6"/><section>
+    <title>date</title>
+<indexterm><primary>date</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>date</secondary></indexterm>
+<para><computeroutput>date = datetime.datetime.now()</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a528ea17ceca1b4d8b98b16d619e31227"/><section>
+    <title>listeID</title>
+<indexterm><primary>listeID</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>listeID</secondary></indexterm>
+<para><computeroutput>listeID = listeID</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a1db5cb5e3624b4d03d40037965f5261c"/><section>
+    <title>listeSallesPC</title>
+<indexterm><primary>listeSallesPC</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>listeSallesPC</secondary></indexterm>
+<para><computeroutput>list listeSallesPC</computeroutput></para><emphasis role="strong">Valeur initiale :</emphasis><programlisting linenumbering="unnumbered">=&#32;&#32;[
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;15&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;17&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;21&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;22&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;23&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;24&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;25&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;25&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;26&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;130&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;128&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]
+</programlisting></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1af6c7d64582ea8c1a8b29907c40a203e0"/><section>
+    <title>listeSallesTD</title>
+<indexterm><primary>listeSallesTD</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>listeSallesTD</secondary></indexterm>
+<para><computeroutput>list listeSallesTD = [&quot;124&quot;, &quot;125&quot;, &quot;126&quot;, &quot;127&quot;, &quot;129&quot;, &quot;138&quot;]</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a26e9c310f0ff6151d48550c2b6b2b185"/><section>
+    <title>lock<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>lock</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>lock</secondary></indexterm>
+<para><computeroutput>bool lock = False</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ad87049c61d875e3349b248c0802b322c"/><section>
+    <title>lock<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>lock</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>lock</secondary></indexterm>
+<para><computeroutput>list lock</computeroutput></para><emphasis role="strong">Valeur initiale :</emphasis><programlisting linenumbering="unnumbered">=&#32;&#32;[
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;executor.submit(self.get_TD_ics,&#32;self.listeID[TD],&#32;TD)
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;TD&#32;<emphasis role="keywordflow">in</emphasis>&#32;self.listeID
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;]
+</programlisting></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1a57e6081523f15f54bed12c097f839694"/><section>
+    <title>refresh_on_init</title>
+<indexterm><primary>refresh_on_init</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>refresh_on_init</secondary></indexterm>
+<para><computeroutput>refresh_on_init = refresh_on_init</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1acbd5668deef0c3f02132ac19b7eac0c6"/><section>
+    <title>salles<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>salles</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>salles</secondary></indexterm>
+<para><computeroutput>salles = {}</computeroutput></para></section>
+<anchor xml:id="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle_1ae822a482a803dc5834a4f8e061a5d316"/><section>
+    <title>salles<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>salles</primary><secondary>TrouveTaSalle</secondary></indexterm>
+<indexterm><primary>TrouveTaSalle</primary><secondary>salles</secondary></indexterm>
+<para><computeroutput>list salles = []</computeroutput></para></section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+utils/<link linkend="__trouve_ta_salle_8py">TrouveTaSalle.py</link></section>
+</section>

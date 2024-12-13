@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_cogs_1_1admin_1_1_admin" xml:lang="fr">
+<title>Référence de la classe Admin</title>
+<indexterm><primary>Admin</primary></indexterm>
+<para>Graphe d&apos;héritage de Admin:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_cogs_1_1admin_1_1_admin.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Fonctions membres publiques    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_cogs_1_1admin_1_1_admin_1a214e5f22a181af8e53ef7e793d9e3492">__init__</link> (self, <link linkend="_class_cogs_1_1admin_1_1_admin_1a63afbe8ca6c6cef9d777272fccaefc69">bot</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_class_cogs_1_1admin_1_1_admin_1a3007559489f969ae4d0603f094418c24">clear</link> (self, discord.Interaction interaction, int nombre)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Champs de données    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_cogs_1_1admin_1_1_admin_1a63afbe8ca6c6cef9d777272fccaefc69">bot</link> = bot</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description détaillée</title>
+
+<para><literallayout><computeroutput>@class Admin
+@brief Cog pour les commandes d&apos;administration.
+@details Fournit des outils pour gérer efficacement les salons Discord.
+</computeroutput></literallayout> </para>
+</section>
+<section>
+<title>Documentation des constructeurs et destructeur</title>
+<anchor xml:id="_class_cogs_1_1admin_1_1_admin_1a214e5f22a181af8e53ef7e793d9e3492"/><section>
+    <title>__init__()</title>
+<indexterm><primary>__init__</primary><secondary>Admin</secondary></indexterm>
+<indexterm><primary>Admin</primary><secondary>__init__</secondary></indexterm>
+<para><computeroutput>__init__ ( self,  bot)</computeroutput></para>
+<para><literallayout><computeroutput>@brief Initialise le Cog Admin.
+@param bot Instance du bot Discord.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Documentation des fonctions membres</title>
+<anchor xml:id="_class_cogs_1_1admin_1_1_admin_1a3007559489f969ae4d0603f094418c24"/><section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Admin</secondary></indexterm>
+<indexterm><primary>Admin</primary><secondary>clear</secondary></indexterm>
+<para><computeroutput>clear ( self, discord.Interaction interaction, int nombre)</computeroutput></para>
+<para><literallayout><computeroutput>@brief Supprime un nombre défini de messages dans le salon actuel.
+@param interaction Interaction contenant les informations sur la commande slash.
+@param nombre Nombre de messages à supprimer (entre 1 et 100).
+@details Cette commande ne peut être utilisée que par les utilisateurs ayant la permission de gérer les messages.
+@note Le message confirmant la suppression est envoyé de manière éphémère.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Documentation des champs</title>
+<anchor xml:id="_class_cogs_1_1admin_1_1_admin_1a63afbe8ca6c6cef9d777272fccaefc69"/><section>
+    <title>bot</title>
+<indexterm><primary>bot</primary><secondary>Admin</secondary></indexterm>
+<indexterm><primary>Admin</primary><secondary>bot</secondary></indexterm>
+<para><computeroutput>bot = bot</computeroutput></para></section>
+<para>
+La documentation de cette classe a été générée à partir du fichier suivant :</para>
+Cogs/<link linkend="_admin_8py">admin.py</link></section>
+</section>

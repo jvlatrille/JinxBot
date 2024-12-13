@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['semestre_0',['SEMESTRE',['../namespaceconfig.html#a2b44d53936966745d12cd91bd9d22ead',1,'config']]]
+  ['jinxbot_0',['JinxBot',['../md__r_e_a_d_m_e.html',1,'']]]
 ];

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ping_8py" xml:lang="fr">
+<title>Référence du fichier Cogs/ping.py</title>
+<indexterm><primary>Cogs/ping.py</primary></indexterm>
+<simplesect>
+    <title>Structures de données    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_cogs_1_1ping_1_1_ping">Ping</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_cogs">Cogs</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_cogs_1_1ping">Cogs.ping</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespace_cogs_1_1ping_1a5fdee29a83fb0f674f3021783ead2aa8">setup</link> (bot)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

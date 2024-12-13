@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacemain" xml:lang="fr">
+<title>Référence de l&apos;espace de nommage main</title>
+<indexterm><primary>main</primary></indexterm>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemain_1a0ccd903a22a29a100a7ad365177dee3d">load_extensions</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a00e8c2e8b5259561872fb66c26ada2e0">on_ready</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a51af30a60f9f02777c6396b8247e356f">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemain_1afde8e18a788ccc92fc61cab298bca7e3">level</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a387137c43ed9616d39ba90e890d181eb">format</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a63afbe8ca6c6cef9d777272fccaefc69">bot</link> = commands.Bot(command_prefix=&quot;/&quot;, intents=Intents.all())</para>
+</listitem>
+            <listitem><para>list <link linkend="_namespacemain_1a44c97348474f586887752f40d029da97">initial_extensions</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des fonctions</title>
+<anchor xml:id="_namespacemain_1a0ccd903a22a29a100a7ad365177dee3d"/><section>
+    <title>load_extensions()</title>
+<indexterm><primary>load_extensions</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>load_extensions</secondary></indexterm>
+<para><computeroutput>load_extensions ( )</computeroutput></para></section>
+<anchor xml:id="_namespacemain_1a51af30a60f9f02777c6396b8247e356f"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>main ( )</computeroutput></para></section>
+<anchor xml:id="_namespacemain_1a00e8c2e8b5259561872fb66c26ada2e0"/><section>
+    <title>on_ready()</title>
+<indexterm><primary>on_ready</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>on_ready</secondary></indexterm>
+<para><computeroutput>on_ready ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Documentation des variables</title>
+<anchor xml:id="_namespacemain_1a63afbe8ca6c6cef9d777272fccaefc69"/><section>
+    <title>bot</title>
+<indexterm><primary>bot</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>bot</secondary></indexterm>
+<para><computeroutput>bot = commands.Bot(command_prefix=&quot;/&quot;, intents=Intents.all())</computeroutput></para></section>
+<anchor xml:id="_namespacemain_1a387137c43ed9616d39ba90e890d181eb"/><section>
+    <title>format</title>
+<indexterm><primary>format</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>format</secondary></indexterm>
+<para><computeroutput>format</computeroutput></para></section>
+<anchor xml:id="_namespacemain_1a44c97348474f586887752f40d029da97"/><section>
+    <title>initial_extensions</title>
+<indexterm><primary>initial_extensions</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>initial_extensions</secondary></indexterm>
+<para><computeroutput>list initial_extensions</computeroutput></para><emphasis role="strong">Valeur initiale :</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;[
+2 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Cogs.salles.Salles&quot;</emphasis>,
+3 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Cogs.ping&quot;</emphasis>,
+4 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Cogs.admin&quot;</emphasis>,
+5 ]
+</programlisting></section>
+<anchor xml:id="_namespacemain_1afde8e18a788ccc92fc61cab298bca7e3"/><section>
+    <title>level</title>
+<indexterm><primary>level</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>level</secondary></indexterm>
+<para><computeroutput>level</computeroutput></para></section>
+</section>
+</section>

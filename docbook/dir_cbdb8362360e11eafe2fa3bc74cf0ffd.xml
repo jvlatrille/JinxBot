@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_cbdb8362360e11eafe2fa3bc74cf0ffd" xml:lang="fr">
+<title>Répertoire de référence de utils</title>
+<indexterm><primary>Répertoire de référence de utils</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="_utils_2____init_____8py">__init__.py</link></para>
+</listitem>
+            <listitem><para>fichier <link linkend="__trouve_ta_salle_8py">TrouveTaSalle.py</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

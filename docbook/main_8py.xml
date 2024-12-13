@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8py" xml:lang="fr">
+<title>Référence du fichier main.py</title>
+<indexterm><primary>main.py</primary></indexterm>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespacemain">main</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemain_1a0ccd903a22a29a100a7ad365177dee3d">load_extensions</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a00e8c2e8b5259561872fb66c26ada2e0">on_ready</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a51af30a60f9f02777c6396b8247e356f">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemain_1afde8e18a788ccc92fc61cab298bca7e3">level</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a387137c43ed9616d39ba90e890d181eb">format</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a63afbe8ca6c6cef9d777272fccaefc69">bot</link> = commands.Bot(command_prefix=&quot;/&quot;, intents=Intents.all())</para>
+</listitem>
+            <listitem><para>list <link linkend="_namespacemain_1a44c97348474f586887752f40d029da97">initial_extensions</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__trouve_ta_salle_8py" xml:lang="fr">
+<title>Référence du fichier utils/TrouveTaSalle.py</title>
+<indexterm><primary>utils/TrouveTaSalle.py</primary></indexterm>
+<simplesect>
+    <title>Structures de données    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classutils_1_1_trouve_ta_salle_1_1_trouve_ta_salle">TrouveTaSalle</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Espaces de nommage    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceutils">utils</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceutils_1_1_trouve_ta_salle">utils.TrouveTaSalle</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceutils_1_1_trouve_ta_salle_1ac2bd5c4d78a5e3976f4278479d0ee7f9">timezone</link> = pytz.timezone(&quot;Europe/Paris&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>
