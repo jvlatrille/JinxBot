@@ -8,9 +8,6 @@ import concurrent.futures
 import pytz
 timezone = pytz.timezone("Europe/Paris")
 
-
-
-
 class TrouveTaSalle():
     def __init__(self,listeID:dict,refresh_on_init:bool=True):
         if type(listeID) != dict:

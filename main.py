@@ -4,19 +4,20 @@ from discord.ext import commands
 from discord import Intents
 from config import BOT_TOKEN
 
-# Configuration de logging
+# Configuration de logging pour afficher les informations
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-# Préfixe des commandes et intents
+
 bot = commands.Bot(command_prefix="/", intents=Intents.all())
 
 # Liste des extensions à charger
 initial_extensions = [
     "Cogs.salles.Salles",
-    "Cogs.ping",  # Extension Ping
+    "Cogs.ping",
+    "Cogs.admin",
 ]
 
 # Chargement des extensions
@@ -35,18 +36,18 @@ async def on_ready():
         # Synchronisation globale des commandes slash
         synced = await bot.tree.sync()
         if synced:
-            logging.info(f"Commandes slash synchronisées : {len(synced)} commandes.")
+            logging.info(f"Commandes slash synchronisées : {len(synced)} commandes.\n")
         else:
-            logging.info("Commandes slash synchronisées, mais aucune commande n'a été retournée.")
+            logging.info("Commandes slash synchronisées (askip), mais aucune commande n'a été retournée :(\n)")
     except Exception as e:
-        logging.error(f"Erreur lors de la synchronisation des commandes : {e}")
+        logging.error(f"Erreur lors de la synchronisation des commandes >:(\n{e}\n\n")
 
 
 # Fonction principale pour lancer le bot
 async def main():
     async with bot:
-        await load_extensions()  # Charge les extensions
-        await bot.start(BOT_TOKEN)  # Démarre le bot
+        await load_extensions()
+        await bot.start(BOT_TOKEN)
 
 # Exécution principale
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ from discord import app_commands
 from discord.ext import commands, tasks
 from discord.app_commands import Choice
 from utils.TrouveTaSalle import TrouveTaSalle
-from config import ID_PROMOS, timezone
+from config import ID_PROMOS, timezone, ROLES
 import datetime
 
 
@@ -235,6 +235,65 @@ class Salles(commands.Cog):
             )
 
         embed.set_footer(text="Les informations peuvent être incomplètes ou inexactes")
+        await interaction.response.send_message(embed=embed)
+
+
+    @app_commands.command(
+        name="emploi_du_temps",
+        description="Obtenez votre emploi du temps basé sur vos rôles."
+    )
+    async def emploi_du_temps(self, interaction: discord.Interaction):
+        """Commande slash pour afficher l'emploi du temps de l'utilisateur."""
+
+        # Initialisation des variables
+        roles = [role.name for role in interaction.user.roles]
+        annee, td, tp = "", "", ""
+
+        # Vérification des rôles
+        for role in roles:
+            if role in ROLES["Année"]:
+                annee = ROLES["Année"][role]
+            if role in ROLES["TD"]:
+                td = ROLES["TD"][role]
+            if role in ROLES["TP"]:
+                tp = ROLES["TP"][role]
+
+        # Validation des rôles
+        if not annee or not td or not tp:
+            await interaction.response.send_message(
+                "❌ Vous n'avez pas les rôles nécessaires pour récupérer votre emploi du temps. Vérifiez vos rôles dans le serveur !",
+                ephemeral=True,
+            )
+            return
+
+        # Récupération des cours
+        cours = self.edt.get_cours_TD(f"{annee}-{td}-{tp}")
+        if not cours["cours"]:
+            await interaction.response.send_message(
+                "❌ Aucun cours trouvé pour votre TD/TP aujourd'hui.",
+                ephemeral=True,
+            )
+            return
+
+        # Création de l'embed
+        embed = discord.Embed(
+            title=f"Emploi du temps pour {td}-{tp} (Année {annee})",
+            color=discord.Color.blue(),
+            timestamp=datetime.datetime.now(timezone),
+        )
+        embed.set_footer(text="Les informations peuvent être incomplètes ou inexactes")
+
+        # Ajouter les cours à l'embed
+        for cours_info in cours["cours"]:
+            heure_debut = datetime.datetime.fromtimestamp(cours_info["begin"]).strftime("%H:%M")
+            heure_fin = datetime.datetime.fromtimestamp(cours_info["end"]).strftime("%H:%M")
+            embed.add_field(
+                name=f"{heure_debut} - {heure_fin}",
+                value=f"**{cours_info['name']}** (Salle : {cours_info['salle']})",
+                inline=False,
+            )
+
+        # Envoi de l'embed
         await interaction.response.send_message(embed=embed)
 
 
