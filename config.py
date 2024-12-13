@@ -1,19 +1,38 @@
-# config.py
+"""
+@file config.py
+@brief Fichier de configuration pour le bot.
+@details Ici, on stocke toutes les configs importantes : token, promos, rôles, et fuseau horaire.
+"""
 
 import os
 from dotenv import load_dotenv
 import sys
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import confidentiel
 import pytz
 
-# Chargement des variables d'environnement
+
+"""
+@brief Charge les variables d'environnement depuis un fichier `.env`.
+@details Utile pour garder des infos sensibles (comme les tokens) hors du code visible( c'est pas ce que j'utilise, mais c'est une bonne pratique).
+"""
 load_dotenv()
 
-# Token du bot
+
+"""
+@var BOT_TOKEN
+Le token secret du bot, importé depuis le module confidentiel (fichier local non partagé).
+"""
 BOT_TOKEN = confidentiel.TOKENBOTPROMO
 
-# Variables liées au semestre
+
+"""
+@var SEMESTRE
+Le semestre en cours. Défini dans les variables d'environnement ou "1" par défaut.
+@var ID_PROMOS
+Dictionnaire associant chaque groupe TD/TP à un ID unique pour l'emploi du temps.
+"""
 SEMESTRE = os.getenv("SEMESTER", "1")
 ID_PROMOS = {
     "1-TD1-TP1": "368",
@@ -27,7 +46,11 @@ ID_PROMOS = {
     "2-TD2-TP2": "398",
 }
 
-# Rôles Discord
+
+"""
+@var ROLES
+Dictionnaire des rôles Discord associés aux TD, TP, et années. Permet de savoir qui appartient à quel groupe.
+"""
 ROLES = {
     "TD": {
         "959814970336510022": "TD1",
@@ -48,5 +71,9 @@ ROLES = {
     },
 }
 
-# Configuration du fuseau horaire
+
+"""
+@var timezone
+Fuseau horaire utilisé pour tout ce qui est lié au temps (horaires, dates, etc.).
+"""
 timezone = pytz.timezone("Europe/Paris")

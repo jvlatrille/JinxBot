@@ -1,3 +1,9 @@
+"""
+@file Salles.py
+@brief Module gérant les commandes liées aux salles et professeurs pour le bot Discord.
+@details Permet de récupérer des infos sur les salles, les profs, et l'emploi du temps.
+"""
+
 import discord
 import logging
 from discord import app_commands
@@ -8,7 +14,18 @@ from config import ID_PROMOS, timezone, ROLES
 import datetime
 
 
+"""
+    @class Salles
+    @brief Classe principale pour gérer les commandes slash et contextuelles liées aux salles.
+    """
+
+
 class Salles(commands.Cog):
+    """
+        @brief Initialise le cog avec les infos nécessaires.
+    @param bot Instance du bot.
+    """
+
     def __init__(self, bot):
         self.bot = bot
         self.edt = TrouveTaSalle(ID_PROMOS, refresh_on_init=False)
@@ -42,6 +59,13 @@ class Salles(commands.Cog):
             "GASTAMBIDE": "MA. Gastambide",
         }
 
+    """
+        @brief Gère l'autocomplétion pour les noms de profs.
+        @param interaction Interaction actuelle.
+        @param current Ce que l'utilisateur a tapé.
+        @return Liste des suggestions basées sur la saisie.
+        """
+
     async def autocomplete_professeur(
         self, interaction: discord.Interaction, current: str
     ):
@@ -55,8 +79,16 @@ class Salles(commands.Cog):
         # Limite à 25 résultats (Discord impose cette limite)
         return suggestions[:25]
 
+    """
+        @brief Annule les tâches si le cog est déchargé.
+        """
+
     def cog_unload(self):
         self.refresh_edt.cancel()
+
+    """
+        @brief Tâche périodique pour mettre à jour les données des salles.
+        """
 
     @tasks.loop(minutes=10)
     async def refresh_edt(self):
@@ -82,7 +114,12 @@ class Salles(commands.Cog):
             message += f"- {salle} : {creneaux[0][0]} à {creneaux[0][1]}\n"
         await ctx.send(message)
 
-    # COMMANDE INFO_SALLE
+    """
+        @brief Commande slash pour obtenir des infos sur une salle.
+        @param interaction Interaction Discord.
+        @param nom_salle Nom de la salle.
+        """
+
     @app_commands.command(
         name="info_salle",
         description="Obtenir des informations sur une salle spécifique.",
@@ -133,7 +170,12 @@ class Salles(commands.Cog):
         # Envoi de l'embed
         await interaction.response.send_message(embed=embed)
 
-    # COMMANDE INFO_PROF AVEC AUTOCOMPLÉTION
+    """
+        @brief Commande slash pour obtenir des infos sur un prof.
+        @param interaction Interaction Discord.
+        @param nom_prof Nom du prof.
+        """
+
     @app_commands.command(
         name="info_prof",
         description="Obtenir des informations sur un professeur spécifique.",
@@ -196,8 +238,15 @@ class Salles(commands.Cog):
 
         await interaction.response.send_message(embed=embed)
 
+    """
+        @brief Commande slash pour obtenir les salles libres.
+        @param interaction Interaction Discord.
+        """
 
-    @app_commands.command(name="salles_libres", description="Retourne les salles libres actuellement, triées par durée de disponibilité.")
+    @app_commands.command(
+        name="salles_libres",
+        description="Retourne les salles libres actuellement, triées par durée de disponibilité.",
+    )
     async def salles_libres(self, interaction: discord.Interaction):
         """Commande slash pour obtenir les salles libres"""
         # Récupère les informations sur les salles libres
@@ -211,7 +260,9 @@ class Salles(commands.Cog):
                 color=discord.Color.red(),
                 timestamp=datetime.datetime.now(timezone),
             )
-            embed.set_footer(text="Les informations peuvent être incomplètes ou inexactes")
+            embed.set_footer(
+                text="Les informations peuvent être incomplètes ou inexactes"
+            )
             await interaction.response.send_message(embed=embed)
             return
 
@@ -226,8 +277,8 @@ class Salles(commands.Cog):
         # Ajout des salles libres avec leurs créneaux
         for salle, creneaux in info.items():
             salle_type = "🖥️ PC" if salle in self.edt.listeSallesPC else "📚 TD"
-            debut = datetime.datetime.fromtimestamp(creneaux[0][0]).strftime('%H:%M')
-            fin = datetime.datetime.fromtimestamp(creneaux[0][1]).strftime('%H:%M')
+            debut = datetime.datetime.fromtimestamp(creneaux[0][0]).strftime("%H:%M")
+            fin = datetime.datetime.fromtimestamp(creneaux[0][1]).strftime("%H:%M")
             embed.add_field(
                 name=f"{salle_type} Salle {salle}",
                 value=f"Disponible de **{debut}** à **{fin}**",
@@ -237,10 +288,12 @@ class Salles(commands.Cog):
         embed.set_footer(text="Les informations peuvent être incomplètes ou inexactes")
         await interaction.response.send_message(embed=embed)
 
+    """     @brief Commande slash pour afficher l'emploi du temps de l'utilisateur.
+        @param interaction Interaction Discord."""
 
     @app_commands.command(
         name="emploi_du_temps",
-        description="Obtenez votre emploi du temps basé sur vos rôles."
+        description="Obtenez votre emploi du temps basé sur vos rôles.",
     )
     async def emploi_du_temps(self, interaction: discord.Interaction):
         """Commande slash pour afficher l'emploi du temps de l'utilisateur."""
@@ -285,8 +338,12 @@ class Salles(commands.Cog):
 
         # Ajouter les cours à l'embed
         for cours_info in cours["cours"]:
-            heure_debut = datetime.datetime.fromtimestamp(cours_info["begin"]).strftime("%H:%M")
-            heure_fin = datetime.datetime.fromtimestamp(cours_info["end"]).strftime("%H:%M")
+            heure_debut = datetime.datetime.fromtimestamp(cours_info["begin"]).strftime(
+                "%H:%M"
+            )
+            heure_fin = datetime.datetime.fromtimestamp(cours_info["end"]).strftime(
+                "%H:%M"
+            )
             embed.add_field(
                 name=f"{heure_debut} - {heure_fin}",
                 value=f"**{cours_info['name']}** (Salle : {cours_info['salle']})",
@@ -295,6 +352,12 @@ class Salles(commands.Cog):
 
         # Envoi de l'embed
         await interaction.response.send_message(embed=embed)
+
+
+"""
+@brief Ajoute le cog au bot.
+@param bot Instance du bot.
+"""
 
 
 async def setup(bot):
